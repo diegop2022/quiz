@@ -23,13 +23,33 @@ function startTimer() {
         } 
 
 }, 1000);
-}
+};
 
 function startGame() {
+    
+    btn1.addEventListener("click", function(event) {
+        if(question.textContent === "How many days are in a week?"){
+            event.preventDefault()
+            console.log(event)
+            option1.textContent = "false"
+            time = time - 10;
+        } if (question.textContent === "What is the 7th letter in the alphabet"){
+            event.preventDefault()
+            option1.textContent = "true"
+            question3();
+        } if (question.textContent === "How many months are in a year?"){
+            event.preventDefault()
+            console.log(event)
+            option1.textContent = "false"
+            time = time - 10     
+        }
+    });
+    
     btn1.style.visibility = "visible";
     btn2.style.visibility = "visible";
     btn3.style.visibility = "visible";
     btn4.style.visibility = "visible";
+    
     question1()
     function question1() {
     question.textContent = "How many days are in a week?"
@@ -38,13 +58,6 @@ function startGame() {
     option3.textContent = "6"
     option4.textContent = "7"
 
-
-    btn1.addEventListener("click", function(event) {
-        event.preventDefault()
-        console.log(event)
-    option1.textContent = "false"
-    time = time - 10
-    });
 
     btn2.addEventListener("click", function(event) {
     option2.textContent = "false"
@@ -59,10 +72,6 @@ function startGame() {
     btn4.addEventListener("click", function(event) {
     option4.textContent = "true"
     question2() 
-    btn1.removeEventListener()
-    btn2.removeEventListener()
-    btn3.removeEventListener()
-    btn4.removeEventListener()
     });
     }
 
@@ -77,11 +86,6 @@ function startGame() {
         option3.textContent = "j"
         option4.textContent = "q"
     
-        btn1.addEventListener("click", function() {
-
-            option1.textContent = "true"
-            question3()
-            });
         
             btn2.addEventListener("click", function() {
 
@@ -115,11 +119,6 @@ function startGame() {
         option3.textContent = "11"
         option4.textContent = "12"
     
-        btn1.addEventListener("click", function() {
-            option1.textContent = "false"
-            time = time - 10
-            
-            });
         
             btn2.addEventListener("click", function() {
             option2.textContent = "false"

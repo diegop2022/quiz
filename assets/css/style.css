@@ -31,10 +31,6 @@ header .high-score {
     padding: 0px 0px 0px 500px
 }
 
-header .high-score a {
-    color: black;
-    text-decoration: none;
-}
 /* End of Header Section*/
 
 /* Footer Section*/
@@ -58,11 +54,32 @@ footer {
 section ul li {
     list-style: none;
     border: 5px solid;
-    padding: 30px;
+    padding: 47px;
     font-size: 32px;
+    display: flex;
+    justify-content: space-between;
 }
  
+#question {
+    justify-content: center;
+}
 
+#btn1 {
+    text-align: right;
+    visibility: hidden;
+}
+#btn2 {
+    text-align: right;
+    visibility: hidden;
+}
+#btn3 {
+    text-align: right;
+    visibility: hidden;
+}
+#btn4 {
+    text-align: right;
+    visibility: hidden;
+}
 
 
 
@@ -93,3 +110,75 @@ section ul li {
     padding: 0px 0px 30px
 }
 
+#user-name {
+    visibility: hidden;
+}
+
+#btn1style {
+    background-color: peru;
+    color: black;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 3px solid;
+}
+#btn2style {
+    background-color: peru;
+    color: black;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 3px solid;
+}
+#btn3style {
+    background-color: peru;
+    color: black;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 3px solid;
+}
+#btn4style {
+    background-color: peru;
+    color: black;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 3px solid;
+}
+
+#btn1style:hover {
+    box-shadow: 0 3px gray;
+    top: -3px;
+}
+
+#btn2style:hover {
+    box-shadow: 0 3px gray;
+    top: -3px;
+}
+
+#btn3style:hover {
+    box-shadow: 0 3px gray;
+    top: -3px;
+}
+
+#btn4style:hover {
+    box-shadow: 0 3px gray;
+    top: -3px;
+}
+
+#user-name {
+  outline: none;
+  border: none;
+  width: 40%;
+  font-size: 30px;
+  border: 2px solid gray;
+  border-radius: 12px;
+  text-align: center;
+}
+
+#submit {
+    visibility: hidden;
+    background-color: peru;
+    color: black;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 3px solid;
+    text-align: center;
+}

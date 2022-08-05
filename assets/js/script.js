@@ -10,7 +10,7 @@ var btn1 = document.getElementById("btn1")
 var btn2 = document.getElementById("btn2")
 var btn3 = document.getElementById("btn3")
 var btn4 = document.getElementById("btn4")
-var user = document.getElementById("user-name")
+var highscore = document.getElementById("user-name")
 var submit = document.getElementById("submit")
 var userArr = []
 
@@ -156,6 +156,10 @@ function startGame() {
         }
 
         submit.addEventListener("click", function() {
+            var user = highscore.value
+            console.log(user);
+            userArr.push(user + " score " + time)
+            console.log(userArr)
             board()
         })
     }

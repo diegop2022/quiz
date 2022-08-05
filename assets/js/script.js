@@ -11,8 +11,9 @@ var btn2 = document.getElementById("btn2")
 var btn3 = document.getElementById("btn3")
 var btn4 = document.getElementById("btn4")
 var highscore = document.getElementById("user-name")
-var submit = document.getElementById("submit")
-var userArr = []
+var USERNAME_KEY = "userNames"
+var userInput = ""
+userNames = JSON.parse(localStorage.getItem(USERNAME_KEY)) ?? [];
 
 function startTimer() {
     timeInterval = setInterval(function() {
@@ -156,20 +157,24 @@ function startGame() {
         }
 
         submit.addEventListener("click", function() {
-            var user = highscore.value
-            console.log(user);
-            userArr.push(user + " score " + time)
-            console.log(userArr)
-            board()
+            userInput = highscore.value
+            push()
         })
     }
 
+    function push() {
+        userName = (userInput) + "score" + (time)
+        userNames.push(userName)
+        localStorage.setItem(USERNAME_KEY, JSON.stringify(userNames));
+        board()
+    }
+    
     function board() {
         question.textContent = "High Scores"
-        option1.textContent = "" 
-        option2.textContent = ""
-        option3.textContent  = ""
-        option4.textContent = ""
+        option1.textContent = userNames[0]
+        option2.textContent = userNames[1]
+        option3.textContent = userNames[2]
+        option4.textContent = userNames[3]
 
         submit.style.visibility = "hidden";
         btn1.style.visibility = "hidden";
@@ -177,8 +182,6 @@ function startGame() {
         btn3.style.visibility = "hidden";
         btn4.style.visibility = "hidden";
         highscore.style.visibility = "hidden"
-
-
     }
 
 
@@ -189,3 +192,5 @@ button.addEventListener("click", function() {
 });
 
 
+
+console.log(userArr)
